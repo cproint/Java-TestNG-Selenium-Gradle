@@ -15,7 +15,7 @@ pipeline {
 	        steps {
 	            sauce('923fc3a2-50d8-48b1-b8a1-adba6a7b72fe') {
 						sh "./gradlew clean test"
-						step([$class: 'SauceOnDemandTestPublisher'])    
+						//step([$class: 'SauceOnDemandTestPublisher'])    
 		            	echo "The pipeline stage Functional Tests completed successfully."                    
 	            	   
 	            }
