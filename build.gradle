@@ -6,6 +6,7 @@
  * user guide available at https://docs.gradle.org/4.7/userguide/java_library_plugin.html
  */
 
+
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
@@ -15,7 +16,7 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.4.0'
 
     // Use TestNG test framework
-    testImplementation 'org.testng:testng:6.8.8'
+    testImplementation 'org.testng:testng:6.14.3'
 
 }
 

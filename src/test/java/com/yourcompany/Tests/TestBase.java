@@ -38,6 +38,23 @@ public class TestBase  {
      */
     private ThreadLocal<String> sessionId = new ThreadLocal<String>();
 
+    
+    @DataProvider(name = "hardCodedBrowsers", parallel = true)
+    public static Object[][] sauceBrowserDataProvider(Method testMethod) {
+        return new Object[][]{
+                new Object[]{"MicrosoftEdge", "14.14393", "Windows 10"},
+                new Object[]{"firefox", "", "Windows 10"},
+                new Object[]{"internet explorer", "11.0", "Windows 7"},
+                new Object[]{"safari", "10.0", "OS X 10.11"},
+                new Object[]{"chrome", "latest", "OS X 10.10"},
+                new Object[]{"firefox", "latest-1", "Windows 7"}
+        };
+    }
+    
+    
+    
+    
+    
     /**
      * @return the {@link WebDriver} for the current thread
      */
@@ -65,18 +82,14 @@ public class TestBase  {
      * @return
      * @throws MalformedURLException if an error occurs parsing the url
      */
-    protected void createDriver(String methodName)
+    protected void createDriver(String browser, String version, String os, String methodName)
             throws MalformedURLException, UnexpectedException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        String browserName = System.getenv("SELENIUM_BROWSER");
-        String version = System.getenv("SELENIUM_VERSION");
-        String platform = System.getenv("SELENIUM_PLATFORM");
-
         // set desired capabilities to launch appropriate browser on Sauce
-        capabilities.setCapability(CapabilityType.BROWSER_NAME, browserName);
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, browser);
         capabilities.setCapability(CapabilityType.VERSION, version);
-        capabilities.setCapability(CapabilityType.PLATFORM, platform);
+        capabilities.setCapability(CapabilityType.PLATFORM, os);
         capabilities.setCapability("name", methodName);
 
         if (buildTag != null) {
