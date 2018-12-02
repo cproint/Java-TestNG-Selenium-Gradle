@@ -102,8 +102,8 @@ public class TestBase  {
                 capabilities));
 
         // set current sessionId
-        String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-        sessionId.set(id);
+       // String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+      //  sessionId.set(id);
         
    	 
         String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s",
