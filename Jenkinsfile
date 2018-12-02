@@ -3,10 +3,10 @@ pipeline {
 
     stages {
     
-        stage('Initialize and Compile') {
+        stage('Initialize') {
             steps {          	
 				sh "gradle init"
-                echo "The pipeline stage Initialize and Compile completed successfully."
+                echo "The pipeline stage Initialized successfully."
             }
         }
 
