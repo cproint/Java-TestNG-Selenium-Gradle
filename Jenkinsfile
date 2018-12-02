@@ -26,6 +26,7 @@ pipeline {
         stage('Sauce Reporting') {
             steps {
                 echo "The pipeline stage Reporting completed successfully."
+                step([$class: 'SauceOnDemandTestPublisher'])
                 saucePublisher()
             }
         }
