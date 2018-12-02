@@ -5,7 +5,7 @@ pipeline {
     
         stage('Initialize and Compile') {
             steps {          	
-				sh "mvn initialize compile"
+				sh "gradle init"
                 echo "The pipeline stage Initialize and Compile completed successfully."
             }
         }
