@@ -110,6 +110,8 @@ public class TestBase  {
         (((RemoteWebDriver) getWebDriver()).getSessionId().toString()), methodName.getClass().getName());
         System.out.println(message);
         
+        System.out.println(message);
+
     }
 
     /**
