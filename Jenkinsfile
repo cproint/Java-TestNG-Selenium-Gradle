@@ -5,8 +5,7 @@ pipeline {
     
         stage('Initialize') {
             steps {          	
-				sh "./gradlew build"
-				sh "init"
+				sh "gradle init"
                 echo "The pipeline stage Initialized successfully."
             }
         }
