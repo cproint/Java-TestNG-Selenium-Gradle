@@ -29,7 +29,7 @@ repositories {
 test {
     useTestNG() {
         setParallel "methods"
-        setThreadCount 2
+        setThreadCount 100
     }
   ext.workingDirectory = 'build/'
 }
